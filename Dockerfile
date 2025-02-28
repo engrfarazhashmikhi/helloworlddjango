@@ -50,12 +50,12 @@
 # Run the application.
 # CMD gunicorn 'helloworld.wsgi' --bind=0.0.0.0:9000
 
-FROM python:3-slim
-RUN apt update && apt upgrade -y;
-RUN apt install -y build-essential;
-WORKDIR /app/
-COPY . /app/
+FROM python:latest
+RUN apt-get update && apt-get upgrade -y;
+RUN apt-get install -y build-essential;
+WORKDIR /app
+COPY . ./
 RUN pip install pip --upgrade;
 RUN pip install -r requirements.txt;
 EXPOSE 9000
-CMD [ "python", "manage.py runserver 0.0.0.0:9000"]
+CMD ["python", "manage.py","runserver", "0.0.0.0:9000"]
