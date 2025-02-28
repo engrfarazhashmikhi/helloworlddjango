@@ -50,7 +50,7 @@
 # Run the application.
 # CMD gunicorn 'helloworld.wsgi' --bind=0.0.0.0:9000
 
-FROM python:latest
+FROM python:3-slim
 RUN apt-get update && apt-get upgrade -y;
 RUN apt-get install -y build-essential;
 WORKDIR /app
