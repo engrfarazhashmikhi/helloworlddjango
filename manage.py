@@ -3,6 +3,7 @@
 import os
 import sys
 
+__greetings__ = "Assalam-O-Alaikum World"
 
 def main():
     """Run administrative tasks."""
@@ -19,4 +20,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print(__greetings__)
     main()
